@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <h2>Submitted Proposals</h2>
+    
+    <div *ngIf="proposals.length > 0; else noProposals">
+      <div class="proposal" *ngFor="let proposal of proposals; let i = index">
+        <h3>Proposal {{ i + 1 }}</h3>
+        <p><strong>Quote End Date:</strong> {{ proposal.quoteEndDate }}</p>
+        <p><strong>Need By Date:</strong> {{ proposal.needByDate }}</p>
+        <p><strong>Billing Address:</strong> {{ proposal.billingAddress }}</p>
+        <p><strong>Shipping Address:</strong> {{ proposal.shippingAddress }}</p>
+        <p><strong>Selected Vendor:</strong> {{ proposal.selectedVendor }}</p>
+        <h4>Product Lines</h4>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>UOM</th>
+              <th>Price</th>
+              <th>Need By Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of proposal.productLines">
+              <td>{{ product.itemName }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.uom }}</td>
+              <td>{{ product.price | currency }}</td>
+              <td>{{ product.needByDate }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Total Amount:</strong> {{ proposal.totalAmount | currency }}</p>
+        <hr>
+      </div>
+    </div>
+  
+    <!-- Message for no proposals -->
+    <ng-template #noProposals>
+      <p>No proposals found.</p>
+    </ng-template>
+  </div>
+  

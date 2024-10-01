@@ -1,0 +1,101 @@
+<div class="container rfp-form">
+    
+    <div class="form-header">
+      Request for Proposal
+    </div>
+  
+    
+    <div class="form-section">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="rfpNumber" class="form-label">RFP Number</label>
+          <input type="text" class="form-control" id="rfpNumber" placeholder="rfpNumber" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="rfpName" class="form-label">RFP Name</label>
+          <input type="text" class="form-control" id="rfpName" placeholder="rfpName" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="quoteEndDate" class="form-label">Quote End Date</label>
+          <input type="date" class="form-control" id="quoteEndDate" [(ngModel)]="quoteEndDate">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="needByDate" class="form-label">Need By Date</label>
+          <input type="date" class="form-control" id="needByDate" [(ngModel)]="needByDate">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="billingAddress" class="form-label">Billing Address</label>
+          <textarea class="form-control" id="billingAddress" rows="3" [(ngModel)]="billingAddress" placeholder="3590 Hoffman Avenue, New York, NY 10013"></textarea>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="shippingAddress" class="form-label">Shipping Address</label>
+          <textarea class="form-control" id="shippingAddress" rows="3" [(ngModel)]="shippingAddress" placeholder="2159 Bungalow Road"></textarea>
+        </div>
+      </div>
+    </div>
+  
+    
+    <div class="form-section">
+      <label for="vendor" class="form-label">Vendors</label>
+      <select class="form-select" id="vendor" [(ngModel)]="selectedVendor">
+        <option value="ALL" selected>ALL</option>
+        <option value="Vendor1">Vendor 1</option>
+        <option value="Vendor2">Vendor 2</option>
+      </select>
+    </div>
+  
+    <div class="form-section">
+      <label class="form-label">Product Lines</label>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>UOM</th>
+            <th>Price</th>
+            <th>Line Total</th>
+            <th>Need By Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productLines; let i = index">
+              <td><input type="text" class="form-control" [(ngModel)]="product.itemName"></td>
+              <td><input type="number" class="form-control" [(ngModel)]="product.quantity"></td>
+              <td>
+                <select class="form-select" [(ngModel)]="product.uom">
+                  <option value="Each" selected>Each</option>
+                  <option value="Box">Box</option>
+                </select>
+              </td>
+              <td><input type="number" class="form-control" [(ngModel)]="product.price"></td>
+              <td><input type="text" class="form-control" [value]="product.quantity * product.price" readonly></td>
+              <td><input type="date" class="form-control" [(ngModel)]="product.needByDate"></td>
+              <td>
+                <button class="btn btn-danger" (click)="removeProductLine(i)"><i class="bi bi-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+          
+      </table>
+    </div>
+  
+    
+    <div class="form-section">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Total Amount</h5>
+        </div>
+        <div class="col-md-6 text-end">
+          <h5>{{ calculateTotalAmount() | number: '1.2-2' }}</h5>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="form-section text-end">
+      <button class="btn btn-primary" (click)="submitProposal()">Submit</button>
+      <button class="btn btn-secondary" (click)="cancelProposal()">Cancel</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,62 @@
+<h1 class="text-center mb-5">Supplier Relationship Management System</h1>
+
+<div class="container-fluid ">
+  <div class="login-container">
+   
+    <div class="login-left">
+      <img src="./assets/Designer-removebg-preview (1).png" alt="CMS Logo" class="img-fluid" />
+    </div>
+  
+    
+    <div class="login-right">
+      <h3 class="mb-3 text-white">Sign in</h3>
+      <div class="d-flex text-white" id="radio">
+        <input type="radio" id="customer" name="role" [(ngModel)]="role" value="customer" />
+        <label for="customer">Customer</label>
+        <input type="radio" id="vendor" name="role" [(ngModel)]="role" value="vendor" />
+        <label for="vendor">Vendor</label>
+      </div>
+      <hr />
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="mb-3">
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Email or phone"
+            required
+            [(ngModel)]="email"
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter password"
+            required
+            [(ngModel)]="password"
+            name="password"
+          />
+        </div>
+        <div class="text-end ">
+          <a href="#" class="text-white">Forgot email?</a>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-3">Next</button>
+        <p class="text-center mt-3 ">
+          <a class="text-white" routerLink="/register">Register</a>
+        </p>
+      </form>
+  
+      <div id="output">{{ output }}</div>
+      <div id="error" *ngIf="error">{{ error }}</div>
+  
+      <div class="footer-links">
+        <a href="#">Help</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</div>

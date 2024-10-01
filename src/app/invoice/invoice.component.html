@@ -1,0 +1,45 @@
+<div class="container invoice-container">
+    
+    <div class="invoice-header">
+      <div>
+        <h1>Invoice #{{ invoiceNumber }}</h1>
+        <p><strong>Date:</strong> {{ invoiceDate }}</p>
+        <p><strong>Vendor:</strong> {{ vendor }}</p>
+      </div>
+      <div>
+        <p><strong>Status:</strong> {{ status }}</p>
+        <button class="btn btn-primary btn-download" (click)="downloadPDF()">Download as PDF</button>
+      </div>
+    </div>
+  
+    <div class="invoice-details">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.description }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.unitPrice | currency }}</td>
+            <td>{{ item.total | currency }}</td>
+          </tr>
+          <tr class="total">
+            <td colspan="3">Total</td>
+            <td>{{ totalAmount | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    
+    <div class="invoice-footer">
+      <p><strong>Note:</strong> Payment is due within 30 days. Late fees may apply.</p>
+    </div>
+  </div>
+  

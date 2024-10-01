@@ -1,0 +1,112 @@
+
+.nav-link {
+  font-weight: bold;
+}
+
+/* Side Navigation Styling */
+.side-nav {
+  height: 100vh;
+  position: absolute;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  width: 220px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.side-nav.active {
+  transform: translateX(0); /* Show sidebar */
+}
+
+.side-nav.d-none {
+  display: none; /* Hide sidebar */
+}
+
+.side-nav a {
+  display: block;
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.side-nav a:hover {
+  background-color: #e2e6ea;
+}
+
+.side-nav i {
+  margin-right: 10px;
+}
+
+/* Main content starts after the side nav */
+main {
+  margin-left: 220px;
+}
+
+.table-container {
+  padding: 15px;
+}
+
+.graph {
+  height: 300px;
+  background-color: lightgrey;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 1000;
+    background-color: #f8f9fa; /* Match sidebar color */
+  }
+
+  .side-nav.active {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  main {
+    margin-left: 0; /* Reset margin on mobile */
+  }
+}
+
+.table-container {
+  margin-bottom: 20px; /* Add some space between tables */
+}
+
+.box {
+  padding: 20px;
+  margin: 10px 0; /* Responsive margin */
+}
+
+.icon-box {
+  font-size: 24px;
+}
+
+.dropdown-menu {
+  min-width: 180px;
+}
+
+.dropdown-item {
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+img#profileDropdown {
+  cursor: pointer;
+  background-color: #007bff;
+}
+
+/* Custom CSS for Profile Image */
+#profileDropdown {
+  border-radius: 50%; /* Ensures round shape */
+  border: 2px solid white; /* Optional: gives a border to the profile image */
+  overflow: hidden; /* Ensures no overflow */
+}

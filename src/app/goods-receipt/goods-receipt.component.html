@@ -1,0 +1,78 @@
+<div class="container receipt-container">
+    
+    <div class="page-header">
+        <h1>Goods Receipt Note</h1>
+        <button (click)="downloadPDF()" class="btn btn-primary">Download PDF</button>
+    </div>
+
+    <div class="info-section">
+        <h5>Receipt Information</h5>
+        <table class="table">
+            <tr>
+                <th>Receipt Number:</th>
+                <td>GRN-20240926-001</td>
+            </tr>
+            <tr>
+                <th>Date Received:</th>
+                <td>26-Sep-2024</td>
+            </tr>
+            <tr>
+                <th>Supplier Name:</th>
+                <td>ABC Manufacturing</td>
+            </tr>
+            <tr>
+                <th>Warehouse Location:</th>
+                <td>Warehouse #3, Main Distribution Center</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Items Received Section -->
+    <div class="items-table">
+        <h5>Items Received</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Quantity Received</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ITM001</td>
+                    <td>Steel Rod</td>
+                    <td>500</td>
+                    <td>$10.00</td>
+                    <td>$5000.00</td>
+                    <td>Delivered in good condition</td>
+                </tr>
+                <tr>
+                    <td>ITM002</td>
+                    <td>Bolts</td>
+                    <td>1000</td>
+                    <td>$0.50</td>
+                    <td>$500.00</td>
+                    <td>Package damaged, but items intact</td>
+                </tr>
+                <tr>
+                    <td>ITM003</td>
+                    <td>Industrial Oil</td>
+                    <td>200</td>
+                    <td>$20.00</td>
+                    <td>$4000.00</td>
+                    <td>No issues</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Status Section -->
+    <div class="status-badge">
+        <h5>Receipt Status: <span class="badge bg-success">Completed</span></h5>
+    </div>
+</div>
+

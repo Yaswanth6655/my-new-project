@@ -1,0 +1,83 @@
+/* Custom styles */
+.navbar-brand img {
+    height: 50px;
+  }
+  
+  .nav-link {
+    font-weight: bold;
+  }
+  
+  /* Side Navigation Styling */
+  .side-nav {
+    height: 100vh;
+    position: fixed;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    width: 220px;
+  }
+  
+  .side-nav a {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .side-nav a:hover {
+    background-color: #e2e6ea;
+  }
+  
+  .side-nav i {
+    margin-right: 10px;
+  }
+  
+  /* Main content starts after the side nav */
+  main {
+    margin-left: 220px;
+  }
+  
+  .box {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .icon-box {
+    font-size: 24px;
+  }
+  
+  .table-container {
+    padding: 15px;
+  }
+  
+  .graph {
+    height: 300px;
+    background-color: lightgrey;
+  }
+  
+ /* your-component.component.css */
+.table {
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.button-container {
+  margin-top: 10px;
+}
+
+.button-container button {
+  min-width: 150px; /* Ensures buttons are of equal width */
+}
+
+  
+  

@@ -1,0 +1,93 @@
+<div class="container invoice-form">
+   
+    <div class="form-header">
+        Create Invoice
+    </div>
+
+    
+    <div class="form-section">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="poNumber" class="form-label">PO Number</label>
+                <input type="text" class="form-control" id="poNumber" placeholder="Lutz-0031" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="customerCompanyName" class="form-label">Customer Company Name</label>
+                <input type="text" class="form-control" id="customerCompanyName" placeholder="SP Infotech" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="invoiceNumber" class="form-label">Invoice Number</label>
+                <input type="text" class="form-control" id="invoiceNumber" placeholder="INV29062002" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="invoiceStatus" class="form-label">Invoice Status</label>
+                <input type="text" class="form-control" id="invoiceStatus" placeholder="Draft" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="requesterEmail" class="form-label">Requester Email</label>
+                <input type="email" class="form-control" id="requesterEmail" placeholder="masked.admin@example.com">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="invoiceDueDate" class="form-label">Invoice Due On</label>
+                <input type="date" class="form-control" id="invoiceDueDate" value="2022-06-29">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="billTo" class="form-label">Bill To</label>
+                <textarea class="form-control" id="billTo" rows="3" placeholder="Abbotsford Entertainment & Sports Centre, 33800 King Road, Abbotsford"></textarea>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="shipTo" class="form-label">Ship To</label>
+                <textarea class="form-control" id="shipTo" rows="3" placeholder="Ovations Food Services, 18228 US Hwy 41 North, Lynn"></textarea>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="form-section">
+        <label class="form-label">PO Lines</label>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>UOM</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Installation Fee</th>
+                    <th>Freight Charge</th>
+                    <th>Tax (%)</th>
+                    <th>Line Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of poLines">
+                    <td><input type="text" class="form-control" [(ngModel)]="item.name"></td>
+                    <td><input type="text" class="form-control" [(ngModel)]="item.uom"></td>
+                    <td><input type="number" class="form-control" [(ngModel)]="item.quantity"></td>
+                    <td><input type="number" class="form-control" [(ngModel)]="item.unitPrice"></td>
+                    <td><input type="number" class="form-control" [(ngModel)]="item.installationFee"></td>
+                    <td><input type="number" class="form-control" [(ngModel)]="item.freightCharge"></td>
+                    <td><input type="number" class="form-control" [(ngModel)]="item.tax"></td>
+                    <td><input type="text" class="form-control" [value]="item.lineTotal" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="form-section">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Grand Total</h5>
+            </div>
+            <div class="col-md-6 text-end">
+                <h5>{{ calculateGrandTotal() }}</h5>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="form-section text-end">
+        <button class="btn btn-primary" (click)="submit()">Submit</button>
+        <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </div>
+</div>
+

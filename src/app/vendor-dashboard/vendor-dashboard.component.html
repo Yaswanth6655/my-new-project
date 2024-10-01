@@ -1,0 +1,104 @@
+
+<header
+  class="container-fluid bg-primary text-white p-3 d-flex justify-content-between align-items-center"
+>
+  <div class="navbar-brand">
+    <h1>SRMS</h1>
+  </div>
+  <div class="text-center">
+    <h2>Vendor Portal</h2>
+  </div>
+  <div class="d-flex align-items-center">
+    <div class="me-3">
+      <span class="icon-bell"></span>
+      
+    </div>
+    <div class="dropdown">
+      <img
+        [src]="user.profileImage"
+        alt="Profile Image"
+        class="rounded-circle"
+        width="60"
+        height="60"
+        id="profileDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      />
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+        <a class="dropdown-item" [routerLink]="['vendorsprofo']">View your profile</a>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" [routerLink]="['login']">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    
+    <aside class="side-nav">
+      <a href="#"><i class="bi bi-arrow-left"></i> > Back</a>
+      <a routerLink="middlebar">👁️‍🗨️ MiddleBar</a>
+      <a routerLink="goods-receipt">📃 GoodsReceipt</a>
+      <a routerLink="create-invoice">✍ Create Invoice</a>
+      <a routerLink="notifications">🔔 Notifications</a>
+      <a routerLink="catalog">🛍️ Catalog</a>
+      <a routerLink="view-rfq">👁️ View RFQ</a>
+      <a routerLink="proposal-list" routerLinkActive="active">📃View Proposals</a>
+    </aside>
+
+    
+    <main class="col-md-10">
+      
+      <div class="alert alert-light text-center" role="alert">
+        Welcome to Customer Portal
+      </div>
+
+      
+      <div class="row text-center my-4">
+        <div class="col-md-2 box bg-dark text-white">
+          <div class="icon-box">
+            <i class="bi bi-file-earmark-text"></i> 
+          </div>
+          <a class="nav-link" routerLink="create-invoice">Create Invoice</a>
+        </div>
+        <div class="col-md-2 box bg-success text-white">
+          <div class="icon-box">
+            <i class="bi bi-cart-fill"></i> 
+          </div>
+          <a class="nav-link" routerLink="goods-receipt">Goods Receipt Note</a>
+        </div>
+        <div class="col-md-2 box bg-warning text-dark">
+          <div class="icon-box">
+            <i class="bi bi-file-earmark-check"></i> 
+          </div>
+          <a class="nav-link" routerLink="contracts">Contracts</a>
+        </div>
+        <div class="col-md-2 box bg-danger text-white">
+          <div class="icon-box">
+            <i class="bi bi-bell-fill"></i> 
+          </div>
+          <a class="nav-link" routerLink="notifications">Notifications</a>
+        </div>
+        <div class="col-md-2 box bg-info text-dark">
+          <div class="icon-box">
+            <i class="bi bi-grid-fill"></i> 
+          </div>
+          <a class="nav-link" routerLink="catalog">Catalog</a>
+        </div>
+        <div class="col-md-2 box bg-secondary text-dark">
+          <div class="icon-box">
+            <i class="bi bi-file-earmark-text"></i> 
+          </div>
+          <a class="nav-link" routerLink="view-rfq">View RFQ</a>
+        </div>
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+
+    
+    </main>
+  </div>
+</div>

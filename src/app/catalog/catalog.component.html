@@ -1,0 +1,45 @@
+<div>
+    
+    <div class="header-buttons">
+      <button class="btn btn-primary me-2" (click)="viewCart()">View Cart</button>
+      <button class="btn btn-success me-2" (click)="checkOut()">Check Out</button>
+      <button class="btn btn-danger" (click)="clearCart()">Clear Cart</button>
+    </div>
+  
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-md-3 sidebar">
+          <h4>Supply Catalog</h4>
+          <input type="text" class="form-control" placeholder="Search...">
+          <select class="form-select">
+            <option value="">Category</option>
+            <option value="IT">IT Equipment</option>
+            <option value="Office">Office Supplies</option>
+          </select>
+          <label>Pricing (USD)</label>
+          <input type="range" class="form-range" min="0" max="1500" step="10">
+          <button class="btn btn-primary w-100 mt-3">Generate</button>
+        </div>
+  
+       
+        <div class="col-md-9">
+          <div class="row g-3 mt-3">
+            
+            <div class="col-md-4" *ngFor="let product of products">
+              <div class="product-card">
+                <img [src]="product.image" alt="{{ product.name }}" class="img-fluid">
+                <h5>{{ product.name }}</h5>
+                <p>Category: {{ product.category }}</p>
+                <p>Vendor: {{ product.vendor }}</p>
+                <p>Price: ${{ product.price }}</p>
+                <input type="number" class="form-control" placeholder="Qty" min="1" #qtyInput>
+                <button class="btn btn-primary w-100 mt-2" (click)="addToCart(product, qtyInput)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

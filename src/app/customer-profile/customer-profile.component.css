@@ -1,0 +1,92 @@
+/* Custom styles for the profile page */
+.profile-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section */
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.profile-header p {
+    color: #6c757d;
+}
+
+/* Section styling */
+.form-section {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+/* Label styling */
+.form-label {
+    font-weight: 500;
+}
+
+/* Button styling */
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Focus effects for form inputs */
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Profile photo section */
+.profile-photo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo input {
+    margin-top: 10px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .profile-container {
+        margin-top: 30px;
+        padding: 15px;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .profile-photo img {
+        width: 100px;
+        height: 100px;
+    }
+}

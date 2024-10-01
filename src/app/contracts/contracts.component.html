@@ -1,0 +1,47 @@
+<div class="contract-header">
+    <h1>Contracts</h1>
+  </div>
+  
+  <div class="container">
+    <div class="contract-table">
+      <h4 class="mb-3">Active Contracts</h4>
+  
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Contract Number</th>
+            <th scope="col">Supplier Name</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contract of contracts; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ contract.contractNumber }}</td>
+            <td>{{ contract.supplierName }}</td>
+            <td>{{ contract.startDate }}</td>
+            <td>{{ contract.endDate }}</td>
+            <td>
+              <span class="badge" [ngClass]="{
+                'bg-success': contract.status === 'Active',
+                'bg-warning': contract.status === 'Expiring Soon',
+                'bg-danger': contract.status === 'Expired'
+              }">
+                {{ contract.status }}
+              </span>
+            </td>
+            <td>
+              <button class="btn btn-primary btn-action" (click)="handleAction('view', contract)">View</button>
+              <button *ngIf="contract.status === 'Expiring Soon'" class="btn btn-success btn-action" (click)="handleAction('renew', contract)">Renew</button>
+              <button *ngIf="contract.status === 'Expired'" class="btn btn-danger btn-action" (click)="handleAction('terminate', contract)">Terminate</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

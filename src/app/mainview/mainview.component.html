@@ -1,0 +1,73 @@
+  <!-- Tables -->
+  <div class="row">
+    <div class="col-md-6 table-container">
+      <h6>Request for Proposal</h6>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>RFQ Number</th>
+            <th>RFQ Name</th>
+            <th>Quote End Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rfq of rfqList">
+            <td>{{ rfq.number }}</td>
+            <td>{{ rfq.name }}</td>
+            <td>{{ rfq.endDate }}</td>
+            <td>{{ rfq.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6 table-container">
+      <h6>Customer PO</h6>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>PO Number</th>
+            <th>Vendor Name</th>
+            <th>PO Required Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let po of poList">
+            <td>{{ po.number }}</td>
+            <td>{{ po.vendor }}</td>
+            <td>{{ po.requiredDate }}</td>
+            <td>{{ po.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6 table-container">
+      <h6>Customer Invoices</h6>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Invoice Number</th>
+            <th>Vendor Name</th>
+            <th>Due Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let invoice of invoiceList">
+            <td>{{ invoice.number }}</td>
+            <td>{{ invoice.vendor }}</td>
+            <td>{{ invoice.dueDate }}</td>
+            <td>{{ invoice.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <h6>Purchase Orders</h6>
+      <div style="display: block;">
+        <canvas #doughnutChart width="400" height="400" (click)="onChartClick($event)"></canvas>
+      </div>
+    </div>
+  </div>

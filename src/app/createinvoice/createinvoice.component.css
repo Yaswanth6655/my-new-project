@@ -1,0 +1,23 @@
+.invoice-form {
+    margin-top: 20px;
+}
+.form-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+.form-header {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: bold;
+}
+.input-group-text {
+    background-color: #e9ecef;
+}
+.table-bordered th, .table-bordered td {
+    vertical-align: middle;
+}
+

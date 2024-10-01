@@ -1,0 +1,21 @@
+main {
+    margin-left: 220px;
+  }
+  
+  .box {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .icon-box {
+    font-size: 24px;
+  }
+  
+  .table-container {
+    padding: 15px;
+  }
+  
+  .graph {
+    height: 300px;
+    background-color: lightgrey;
+  }

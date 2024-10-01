@@ -1,0 +1,69 @@
+<div class="container rfq-container">
+    
+    <div class="page-header">
+        <h1>Request for Quotation (RFQ)</h1>
+        <button class="btn btn-primary">Download PDF</button>
+    </div>
+
+    
+    <div class="info-section">
+        <h5>RFQ Information</h5>
+        <table class="table">
+            <tr>
+                <th>RFQ Number:</th>
+                <td>{{ rfqNumber }}</td>
+            </tr>
+            <tr>
+                <th>Date Requested:</th>
+                <td>{{ dateRequested }}</td>
+            </tr>
+            <tr>
+                <th>Supplier Name:</th>
+                <td>{{ supplierName }}</td>
+            </tr>
+            <tr>
+                <th>Deadline for Submission:</th>
+                <td>{{ deadlineForSubmission }}</td>
+            </tr>
+            <tr>
+                <th>Quote Status:</th>
+                <td>{{ quoteStatus }}</td>
+            </tr>
+        </table>
+    </div>
+
+    
+    <div class="items-table">
+        <h5>Items Requested</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Quantity Requested</th>
+                    <th>Unit of Measure</th>
+                    <th>Required Delivery Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of itemsRequested">
+                    <td>{{ item.code }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.unit }}</td>
+                    <td>{{ item.deliveryDate }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   
+    <div class="mt-4">
+        <button class="btn btn-success" (click)="submitQuote()">Submit Quote</button>
+        <button class="btn btn-danger" (click)="declineRfq()">Decline RFQ</button>
+    </div>
+
+    <div class="status-badge mt-4">
+        <h5>RFQ Status: <span class="badge bg-warning">Pending Submission</span></h5>
+    </div>
+</div>

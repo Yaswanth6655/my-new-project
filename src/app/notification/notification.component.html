@@ -1,0 +1,42 @@
+<div class="notification-header">
+    <h1>Notifications</h1>
+</div>
+
+<div class="container">
+    <div class="notification-table">
+        <h4 class="mb-3">Recent Notifications</h4>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Notification Type</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let notification of notifications">
+                    <th scope="row">{{ notification.id }}</th>
+                    <td>{{ notification.type }}</td>
+                    <td>{{ notification.message }}</td>
+                    <td>{{ notification.date }}</td>
+                    <td>
+                        <span class="badge"
+                            [ngClass]="{'bg-success': notification.status === 'Acknowledged', 'bg-warning': notification.status === 'Pending', 'bg-danger': notification.status === 'Overdue'}">
+                            {{ notification.status }}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-action" (click)="performAction(notification.action)">
+                            {{ notification.action }}
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

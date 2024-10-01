@@ -1,0 +1,91 @@
+<div class="container registration-form">
+    <div class="form-header text-center">
+        <h2>Supplier Registration</h2>
+        <p>Please fill in the details below to register as a supplier.</p>
+    </div>
+    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+        <div class="form-section">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="companyName" class="form-label">Company Name</label>
+                    <input type="text" class="form-control" id="companyName" 
+                           placeholder="Enter your company name" required 
+                           [(ngModel)]="companyName" name="companyName">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="contactName" class="form-label">Contact Name</label>
+                    <input type="text" class="form-control" id="contactName" 
+                           placeholder="Enter contact person's name" required 
+                           [(ngModel)]="contactName" name="contactName">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" 
+                           placeholder="Enter your email address" required 
+                           [(ngModel)]="email" name="email">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" 
+                           placeholder="Enter your phone number" required 
+                           [(ngModel)]="phone" name="phone">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="3" 
+                              placeholder="Enter your address" required 
+                              [(ngModel)]="address" name="address"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" 
+                           placeholder="Enter your city" required 
+                           [(ngModel)]="city" name="city">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" class="form-control" id="state" 
+                           placeholder="Enter your state" required 
+                           [(ngModel)]="state" name="state">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="zip" class="form-label">Zip Code</label>
+                    <input type="text" class="form-control" id="zip" 
+                           placeholder="Enter your zip code" required 
+                           [(ngModel)]="zip" name="zip">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="taxId" class="form-label">Tax ID Number</label>
+                    <input type="text" class="form-control" id="taxId" 
+                           placeholder="Enter your tax ID" required 
+                           [(ngModel)]="taxId" name="taxId">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" 
+                           placeholder="Enter your password" required 
+                           [(ngModel)]="password" name="password">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" 
+                           placeholder="Confirm your password" required 
+                           [(ngModel)]="confirmPassword" name="confirmPassword">
+                </div>
+                <!-- Role Selection Section -->
+                <div class="col-md-6 mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <select id="role" class="form-select" [(ngModel)]="role" name="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="vendor">Vendor</option>
+                        <option value="customer">Customer</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section text-end">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>
